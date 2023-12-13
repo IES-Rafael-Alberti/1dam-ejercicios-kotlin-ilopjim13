@@ -78,11 +78,20 @@ fun u1ej15() {
  * El usuario puede introducir su nombre combinando mayúsculas y minúsculas como quiera.
  */
 fun u1ej18(){
-    print("Introduce tu nombre completo: ")
-    val nombre = readln()
-    println(nombre.lowercase())
-    println(nombre.uppercase())
-    println(nombre.capitalize())
+    try {
+        print("Introduce tu nombre completo: ")
+        val nombre = readln()
+        println(nombre.lowercase())
+        println(nombre.uppercase())
+        val nombres = nombre.split(" ")
+        val nombres1 = nombres[0]
+        val nombres2 = nombres[1]
+        val nombres3 = nombres[2]
+        println("${nombres1.lowercase().capitalize()} ${nombres2.lowercase().capitalize()} ${nombres3.lowercase().capitalize()}")
+    }catch (e: Exception) {
+        println("")
+    }
+
 }
 
 /**
@@ -171,12 +180,17 @@ fun u1ej26() {
  * el número de unidades con tres dígitos y el coste total con 8 dígitos enteros y 2 decimales.
  */
 fun u1ej27() {
-    print("Introduce el nombre del producto, su precio y el número de unidades separado por (,): ")
-    val producto = readln().split(",")
-    val nombre = producto[0]
-    val precio = producto[1].toFloat()
-    val cantidad = producto[2].toInt()
-    val total = precio * cantidad
-    println("El nombre del producto es: $nombre, su precio es de: $precio {:6.2f}€, se han vendido un total de $cantidad {:3d} unidades y el coste total es de: $total {:8.2f}€.")
+    try {
+        print("Introduce el nombre del producto, su precio y el número de unidades separado por (,): ")
+        val producto = readln().split(",")
+        val nombre = producto[0]
+        val precio = producto[1].toFloat()
+        val cantidad = producto[2].toInt()
+        val total = precio * cantidad
+        println("El nombre del producto es: $nombre, su precio es de: ${String.format("%.2f", precio)}€ {:6}€, se han vendido un total de $cantidad {:3d} unidades y el coste total es de: ${String.format("%.2f", total)}€ {:8}.")
+    } catch (e: Exception) {
+        println("**ERROR** El producto ingresado no es válido.")
+    }
+
 }
 
