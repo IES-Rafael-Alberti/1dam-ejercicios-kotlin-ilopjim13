@@ -89,7 +89,7 @@ fun u1ej18(){
         val nombres3 = nombres[2]
         println("${nombres1.lowercase().capitalize()} ${nombres2.lowercase().capitalize()} ${nombres3.lowercase().capitalize()}")
     }catch (e: Exception) {
-        println("")
+        println("**ERROR** El nombre debe tener un nombre y dos apelliods.")
     }
 
 }
@@ -169,7 +169,7 @@ fun u1ej25() {
 fun u1ej26() {
     print("Introduce los productos de la cesta de la compra separado por comas sin espacios: ")
     val cesta = readln().split(",")
-
+    print(cesta.joinToString(separator = "\n" ))
 }
 
 
@@ -184,10 +184,15 @@ fun u1ej27() {
         print("Introduce el nombre del producto, su precio y el número de unidades separado por (,): ")
         val producto = readln().split(",")
         val nombre = producto[0]
-        val precio = producto[1].toFloat()
+        val precio = producto[1].toDouble()
         val cantidad = producto[2].toInt()
         val total = precio * cantidad
-        println("El nombre del producto es: $nombre, su precio es de: ${String.format("%.2f", precio)}€ {:6}€, se han vendido un total de $cantidad {:3d} unidades y el coste total es de: ${String.format("%.2f", total)}€ {:8}.")
+        print("El nombre del producto es: $nombre, ")
+        print("su precio es de: ")
+        print("${"%.2f".format(precio).take(6)}€")
+        print(", se han vendido un total de ${String.format("%3d", cantidad)} unidades ")
+        print("y el coste total es de: ")
+        println("${"%.2f.".format(total).take(8)}€")
     } catch (e: Exception) {
         println("**ERROR** El producto ingresado no es válido.")
     }
