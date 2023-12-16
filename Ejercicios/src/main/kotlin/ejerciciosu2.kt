@@ -102,8 +102,9 @@ fun u2p1ej10() {
             1 -> println("Su pizza elegida es la vegetariana con pimiento como ingrediente.")
             2 -> println("Su pizza elegida es la vegetariana con tofu como ingrediente.")
             else -> println("**ERROR**")
+        }
     }
-    if (pizza == 2)
+    if (pizza == 2) {
         print("Eliga un ingrediente para su pizza: Peperoni (1), Jamón (2) o Salmón(3) : ")
         val ingredienteNoVegano = readln().toInt()
         when (ingredienteNoVegano) {
@@ -112,7 +113,7 @@ fun u2p1ej10() {
             3 -> println("Su pizza elegida es la no vegetariana con salmón como ingrediente.")
             else -> println("**ERROR**")
         }
-        }
+    }
 }
 
 fun pizzas(pizza: Int):String {
@@ -122,3 +123,66 @@ fun pizzas(pizza: Int):String {
         else -> return "**ERROR**"
     }
 }
+
+
+
+// Sentencias iterativas: 2, 4, 6, 7, 8, 13, 15, 18, 19 y 25.
+
+
+/**
+ * Pregunta al usuario su edad y muestra por pantalla todos los años que ha cumplido (desde 1 hasta su edad).
+ * */
+fun u2p2ej2() {
+    try {
+        print("Introduce su edad: ")
+        val edad = readln().toInt()
+        for (i in 1..edad) {
+            if (i < edad) {
+                print("$i, ")
+            } else {
+                println(i)
+            }
+        }
+    } catch (e: Exception) {
+        println("**ERROR** la edad introducida no es válida.")
+    }
+}
+
+
+/**
+ * Pide al usuario un número entero positivo y muestra por pantalla la cuenta atrás desde ese número hasta cero separados por comas.
+ * */
+fun u2p2ej4() {
+    try {
+        print("Introduce un número positivo: ")
+        val num = readln().toInt()
+        if (num < 0) {
+            println("**ERROR** el número introducido debe ser positivo.")
+        }
+        else {
+            for (i in num..0) {
+                if (i > 0) {
+                    print("$i, ")
+                } else {
+                    println(i)
+                }
+            }
+        }
+    } catch (e: Exception) {
+        println("**ERROR** el número introducido no es válido.")
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -37,6 +37,10 @@ fun main() {
 
     //u2p1ej8()
 
-    u2p1ej10()
+    //u2p1ej10()
+
+    // EJERCICIOS DE SENTENCIAS ITERATIVAS Y SALTOS
+
+    u2p2ej2()
 
 }
