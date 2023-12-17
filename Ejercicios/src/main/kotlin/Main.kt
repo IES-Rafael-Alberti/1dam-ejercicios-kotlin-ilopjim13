@@ -41,6 +41,36 @@ fun main() {
 
     // EJERCICIOS DE SENTENCIAS ITERATIVAS Y SALTOS
 
-    u2p2ej2()
+    //u2p2ej2()
+
+    //u2p2ej4()
+
+    //u2p2ej6()
+
+    //u2p2ej7()
+
+    //u2p2ej8()
+
+    //u2p2ej13()
+
+    //u2p2ej15()
+
+    //u2p2ej18()
+
+    //u2p2ej19()
+
+    //u2p2ej25()
+
+    // EJERCICIOS DE CAPTURAS DE EXEPCIONES
+
+    //u2p3ej2()
+
+    //u2p3ej3()
+
+    u2p3ej4()
+
+
+
+
 
 }
