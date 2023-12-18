@@ -30,6 +30,7 @@ fun u3p1ej4() {
 
 /**
  * Pide el reintegro y lo añade a la lista
+ * @param numeros: MutableList<Int> -> lista mutable con los numeros de la lotería
  * */
 fun pedirReintegro(numeros: MutableList<Int>) {
     try {
@@ -48,6 +49,7 @@ fun pedirReintegro(numeros: MutableList<Int>) {
 
 /**
  * Imprime por pantalla los numeros de la lotería
+ * @param numeros: MutableList<Int> -> lista mutable con los numeros de la lotería
  * */
 fun mostrarLoteria(numeros: MutableList<Int>) {
     val num1 = numeros.subList(0,6)
@@ -81,10 +83,19 @@ fun u3p1ej6() {
 fun borrarAprobadas(asignaturas: MutableList<MutableList<Any>>){
     for (i in asignaturas.count() downTo 0){
         if (asignaturas[i][1] >= 5) {
-            
+            asignaturas.remove(asignaturas[i])
         }
     }
 }
+
+private operator fun Any.compareTo(i: Int): Int {
+    return i
+}
+
+fun mostrarSuspensas(asignaturas: MutableList<MutableList<Any>>) {
+    println("Las asignaturas que debes repetir son: ${asignaturas.joinToString(separator = " ")}")
+}
+
 
 
 
