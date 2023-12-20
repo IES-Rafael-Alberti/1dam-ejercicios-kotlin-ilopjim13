@@ -287,11 +287,11 @@ fun u2p2ej18() {
         var pares = 0
         do {
             print("Introduce un número positivo (-1 para salir): ")
-            var num = readln().toInt()
+            val num = readln().toInt()
             var suma = 0
             if (num < -1) {
                 print("El número debe ser positivo o -1 para salir")
-            } else {
+            } else if (num != -1){
                 for (i in num.toString()) {
                     suma += i.toString().toInt()
                 }
