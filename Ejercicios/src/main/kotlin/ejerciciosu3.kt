@@ -1,3 +1,4 @@
+import java.util.*
 
 // PARTE 1 -> Listas y tuplas: 4, 6, 8, 9, 10 y 13.
 
@@ -186,5 +187,58 @@ fun desviacion(lista: List<String>) {
     for (i in lista) {
         listaInt.add(i.toInt())
     }
-    val desviacion = "noce"
+    val desviacion = "FALTA ESTO NO TENGO NI PUTA IDEA DE COMO SE HACE AYUDA"
 }
+
+
+
+// PARTE 2 -> Diccionarios: 3, 5, 6, 7, 8, 10 y 11.
+
+/**
+ * Guarda en un diccionario los precios de las frutas, pregunta al usuario por una fruta, un número de kilos
+ * y muestra por pantalla el precio de ese número de kilos de fruta.
+ * Si la fruta no está en el diccionario debe mostrar un mensaje informando de ello.
+ * */
+fun u3p2ej3() {
+    val frutas = mapOf("platano" to 1.35, "manzana" to 0.80, "pera" to 0.85, "naranja" to 0.70)
+    print("Introduce el nombre de la fruta: ")
+    val fruta = readln().lowercase().replace("á", "a")
+    print("Intorduce el número de kilos: ")
+    val kilos = readln().toInt()
+    if (fruta in frutas) {
+        println("El precio a pagar es ${String.format("%.2f", frutas[fruta]?.times(kilos))}€")
+    } else {
+        println("**ERROR** la fruta introducida no se encuentra.")
+    }
+}
+
+/**
+ * Crea un diccionario vacío y lo va llenado con información sobre una persona que se le pida al usuario.
+ * Cada vez que se añada un nuevo dato debe imprimirse el contenido del diccionario.
+ * */
+fun u3p2ej5() {
+    val datosClientes = mutableMapOf<String, String>()
+        do {
+            println("INTRODUCE '*' PARA TERMINAR")
+            print("Introduce los datos del cliente (ej: Nombre,Antonio): ")
+            val dato = readln()
+            if (dato != "*") {
+                try {
+                    val datos = dato.split(",")
+                    if (datos[0] !in datosClientes) {
+                        datosClientes[datos[0]] = datos[1]
+                        for ((key, value) in datosClientes){
+                            println("${key.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }}: ${value.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }}")
+                        }
+                    } else {
+                        println("Este dato ya ha sido introducido")
+                    }
+                } catch (e: Exception) {
+                    println("**ERROR**")
+                }
+            }
+        } while (dato != "*")
+
+
+}
+

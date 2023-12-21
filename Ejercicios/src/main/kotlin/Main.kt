@@ -190,9 +190,9 @@ fun mostrarMenu(tipo: Int) {
                     4 -> u3p1ej9()
                     5 -> u3p1ej10()
                     6 -> u3p1ej13()
+                    7 -> u3p2ej3()
+                    8 -> u3p2ej5()
 
-                    7 -> u2p2ej4()
-                    8 -> u2p2ej6()
                     9 -> u2p2ej7()
                     10 -> u2p2ej8()
                     11 -> u2p2ej13()
