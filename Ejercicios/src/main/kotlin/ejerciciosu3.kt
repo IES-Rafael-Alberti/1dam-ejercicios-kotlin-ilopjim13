@@ -87,7 +87,7 @@ fun u3p1ej6() {
 }
 /**
  * Elimina de la lista las asignaturas que se ha aprobado.
- * @param
+ * @param asignaturas: MutableList<MutableList<Any>> lista con las asignaturas y la nota correspondiente de cada asignatura
  * */
 fun borrarAprobadas(asignaturas: MutableList<MutableList<Any>>){
     try {
@@ -101,12 +101,9 @@ fun borrarAprobadas(asignaturas: MutableList<MutableList<Any>>){
     }
 }
 
-private operator fun Any.compareTo(i: Int): Int {
-    return i
-}
 /**
  * Muestra por pantalla las asignaturas que se deben repetir.
- * @param
+ * @param asignaturas: MutableList<MutableList<Any>> lista con las asignaturas y la nota correspondiente de cada asignatura
  * */
 fun mostrarSuspensas(asignaturas: MutableList<MutableList<Any>>) {
     print("Las asignaturas que debes repetir son: ")
@@ -172,6 +169,11 @@ fun u3p1ej13() {
 
 }
 
+/**
+ * Calcula la media de los números introducidos.
+ * @param lista: List<String> lista con los números introducidos por el usuario
+ * @return media:Double retorna la media de los números introducidos en forma de Double
+ * */
 fun media(lista: List<String>):Double {
     var suma = 0.0
     val division = lista.size
@@ -182,6 +184,11 @@ fun media(lista: List<String>):Double {
     return media
 }
 
+/**
+ * Calcula la desviacion de los números introducidos.
+ * @param lista: List<String> lista con los números introducidos por el usuario
+ * @return desviacion:Double retorna la desviacion de los números introducidos en forma de Double
+ * */
 fun desviacion(lista: List<String>) {
     val listaInt = mutableListOf<Int>()
     for (i in lista) {
@@ -355,6 +362,7 @@ fun u3p2ej10() {
 
 /**
  * Pregunta los datos del cliente, crea un diccionario con los datos y lo añade a la base de datos.
+ * @param clientes :MutableMap<String, MutableMap<String, String>> Diccionario con el NIF y los datos de los clientes.
  * */
 fun agregarCliente(clientes:MutableMap<String, MutableMap<String, String>>) {
     print("Introduce el NIF del cliente a añadir: ")
@@ -376,6 +384,7 @@ fun agregarCliente(clientes:MutableMap<String, MutableMap<String, String>>) {
 
 /**
  * Pregunta por el NIF del cliente y elimina sus datos de la base de datos.
+ * @param clientes :MutableMap<String, MutableMap<String, String>> Diccionario con el NIF y los datos de los clientes.
  */
 fun eliminarCliente(clientes:MutableMap<String, MutableMap<String, String>>) {
     print("Introduce el NIF del cliente a eliminar: ")
@@ -390,6 +399,7 @@ fun eliminarCliente(clientes:MutableMap<String, MutableMap<String, String>>) {
 
 /**
  * Pregunta por el NIF del cliente y muestra sus datos.
+ * @param clientes :MutableMap<String, MutableMap<String, String>> Diccionario con el NIF y los datos de los clientes.
  */
 fun mostrarCliente(clientes:MutableMap<String, MutableMap<String, String>>) {
     print("Introduce el NIF del cliente a mostrar: ")
@@ -410,6 +420,7 @@ fun mostrarCliente(clientes:MutableMap<String, MutableMap<String, String>>) {
 
 /**
  * Muestra la lista de todos los clientes de la base datos con su NIF y nombre.
+ * @param clientes :MutableMap<String, MutableMap<String, String>> Diccionario con el NIF y los datos de los clientes.
  */
 fun listarCliente (clientes:MutableMap<String, MutableMap<String, String>>) {
     for ((key, value) in clientes) {
@@ -419,6 +430,7 @@ fun listarCliente (clientes:MutableMap<String, MutableMap<String, String>>) {
 
 /**
  * Muestra la lista de clientes preferentes de la base de datos con su NIF y nombre.
+ * @param clientes :MutableMap<String, MutableMap<String, String>> Diccionario con el NIF y los datos de los clientes.
  */
 fun listaPreferentes (clientes:MutableMap<String, MutableMap<String, String>>) {
     for ((key, value) in clientes) {
@@ -498,6 +510,8 @@ fun u3p3ej2() {
 
 /**
  * Muestra los nombres de todos los alumnos de primaria y los de secundaria, sin repeticiones.
+ * @param alumnosPrimaria :MutableSet<String> conjunto con todos los nombres de los alumnos de primaria
+ * @param alumnosSecundaria :MutableSet<String> conjunto con todos los nombres de los alumnos de secundaria
  */
 fun mostrarSinRepeticiones(alumnosPrimaria:MutableSet<String>, alumnosSecundaria: MutableSet<String>) {
     println("Todos los nombres de primaria y secundaria sin repeticiones son: ${alumnosPrimaria union alumnosSecundaria}")
@@ -505,6 +519,8 @@ fun mostrarSinRepeticiones(alumnosPrimaria:MutableSet<String>, alumnosSecundaria
 
 /**
  * Muestra qué nombres se repiten entre los alumnos de primaria y secundaria.
+ * @param alumnosPrimaria :MutableSet<String> conjunto con todos los nombres de los alumnos de primaria
+ * @param alumnosSecundaria :MutableSet<String> conjunto con todos los nombres de los alumnos de secundaria
  */
 fun mostrarRepetidos(alumnosPrimaria:MutableSet<String>, alumnosSecundaria: MutableSet<String>) {
     println("Los nombres que se repiten son ${alumnosPrimaria intersect alumnosSecundaria}")
@@ -513,6 +529,8 @@ fun mostrarRepetidos(alumnosPrimaria:MutableSet<String>, alumnosSecundaria: Muta
 /**
  * Muestra qué nombres de primaria no se repiten en los de nivel secundaria
  * y si todos los nombres de primaria están incluidos en secundaria.
+ * @param alumnosPrimaria :MutableSet<String> conjunto con todos los nombres de los alumnos de primaria
+ * @param alumnosSecundaria :MutableSet<String> conjunto con todos los nombres de los alumnos de secundaria
  */
 fun mostrarNoRepetidosPrimaria(alumnosPrimaria:MutableSet<String>, alumnosSecundaria: MutableSet<String>) {
     val mostrar = alumnosPrimaria subtract alumnosSecundaria
@@ -538,15 +556,83 @@ fun u3p3ej4() {
 }
 
 /**
- *
+ * Crea un conjunto pares que contenga los números pares del conjunto numeros.
+ * Crea un conjunto multiplos_de_tres que contenga los números que son múltiplos de tres del conjunto numeros.
+ * Encuentra la intersección entre los conjuntos pares y multiplos_de_tres y la guarda en un conjunto llamado pares_y_multiplos_de_tres.
  * */
 fun u3p3ej5() {
+    val numeros = setOf(1,2,3,4,5,6,7,8,9,10)
+    val conjuntoDePares = conjuntoPares(numeros)
+    val conjuntoMultiplosTres = conjuntoMultiplos(numeros)
+    paresMultiplos(conjuntoDePares, conjuntoMultiplosTres)
+}
+
+/**
+ * Crea un conjunto pares que contenga los números pares del conjunto numeros.
+ * @param numeros:Set<Int> conjunto con los números que se han indicado
+ * @return conjuntoDePares: MutableSet<Int> conjunto con los números pares del conjunto numeros
+ * */
+fun conjuntoPares(numeros:Set<Int>):MutableSet<Int> {
+    val conjuntoDePares = mutableSetOf<Int>()
+    for (i in 2..numeros.count() step 2) {
+        conjuntoDePares.add(i)
+    }
+    return conjuntoDePares
+}
+
+/**
+ * Crea un conjunto que contiene los números que son múltiplos de tres del conjunto numeros.
+ * @param numeros:Set<Int> conjunto con los números que se han indicado
+ * @return conjuntoMultiplosTres: MutableSet<Int> conjunto con los números multiplos de tres del conjunto numeros
+ * */
+fun conjuntoMultiplos(numeros:Set<Int>):MutableSet<Int> {
+    val conjuntoMultiplosTres = mutableSetOf<Int>()
+    for (i in 3..numeros.count() step 3) {
+        conjuntoMultiplosTres.add(i)
+    }
+    return conjuntoMultiplosTres
+}
+/**
+ * Encuentra la intersección entre los conjuntos pares y multiplosDeTres y la guarda en un conjunto llamado paresYMultiplos.
+ * @param conjuntoDePares:MutableSet<Int> conjunto con los numeros pares del conjunto numeros
+ * @param conjuntoMultiplosTres:MutableSet<Int> conjunto con los numeros multiplos de tres del conjunto numeros
+ * */
+fun paresMultiplos(conjuntoDePares:MutableSet<Int>, conjuntoMultiplosTres:MutableSet<Int>) {
+    val paresYMultiplos = conjuntoDePares intersect conjuntoMultiplosTres
+    println("Los números pares son ${conjuntoDePares.joinToString(" ")}")
+    println("Los números múltiplos de tres son ${conjuntoMultiplosTres.joinToString(" ")}")
+    println("La intersección entre los conjuntos pares y multiplos de tres es: ${paresYMultiplos.joinToString(" ")}")
 
 }
 
 /**
- *
+ * Crea un conjunto con las vocales y otro conjunto con el alfabero y los compara.
  * */
 fun u3p3ej6() {
+    val vocales = setOf('a', 'e', 'i', 'o', 'u')
+    val alfabeto = setOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
+    val consonantes = consonantesSinVocales(vocales, alfabeto)
+    comunes(vocales, consonantes)
+}
 
+/**
+ * Crea un conjunto con solo las consonantes dentro del alfabeto.
+ * @param vocales: Set<Char> conjunto con todas las vocales
+ * @param alfabeto: Set<Char> conjutno con todas las letras del alfabeto
+ * @return Set<Char> retorna un conjunto con solo las consonantes
+ * */
+fun consonantesSinVocales(vocales:Set<Char>, alfabeto:Set<Char>): Set<Char> {
+    val consonantes = alfabeto subtract vocales
+    println(consonantes)
+    return consonantes
+}
+
+/**
+ * Crea un conjunto con solo las consonantes dentro del alfabeto.
+ * @param vocales: Set<Char> conjunto con todas las vocales
+ * @param consonantes: Set<Char> conjutno con solo las consonantes del alfabeto
+ * */
+fun comunes(vocales:Set<Char>, consonantes:Set<Char>) {
+    val comunes = vocales intersect consonantes
+    println(comunes)
 }

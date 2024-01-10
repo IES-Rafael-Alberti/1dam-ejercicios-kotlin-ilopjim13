@@ -200,11 +200,11 @@ fun mostrarMenu(tipo: Int) {
                     14 -> u3p3ej1()
                     15 -> u3p3ej2()
 
-
                     16 -> u2p3ej2()
                     17 -> u2p3ej3()
-                    18 -> u2p3ej4()
-                    19 -> u2p3ej4()
+
+                    18 -> u3p3ej5()
+                    19 -> u3p3ej6()
                 }
             }
         }
