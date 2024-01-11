@@ -90,6 +90,7 @@ fun MenuPpal() {
 }
 
 fun mostrarMenuPpal() {
+    println("EJERCICIOS DE KOTLIN")
     println("1. Ejercicicos U1")
     println("2. Ejercicicos U2")
     println("3. Ejercicicos U3")
@@ -113,7 +114,7 @@ fun mostrarMenu(tipo: Int) {
                 println("9.  Ejercicico 24")
                 println("10. Ejercicico 25")
                 println("11. Ejercicico 26")
-                println("12. Ejercicico 27")
+                println("12. Ejercicico 27\n")
                 op = pedirOpcion(0, 12)
                 when (op) {
                     1 -> u1ej4()
@@ -149,7 +150,7 @@ fun mostrarMenu(tipo: Int) {
                 println("15. EjIterativas 25\n")
                 println("16. EjExepcion 2")
                 println("17. EjExepcion 3")
-                println("18. EjExepcion 4")
+                println("18. EjExepcion 4\n")
 
                 op = pedirOpcion(0, 18)
                 when (op) {
@@ -176,12 +177,25 @@ fun mostrarMenu(tipo: Int) {
 
             3 -> {
                 println("\nEJERCICIOS UNIDAD 3\n")
-                println("1. Ejlistas 04")
-                println("2. Ejlistas 06")
-                println("3. Ejlistas 08")
-                println("4. Ejlistas 09")
-                println("5. Ejlistas 10")
-                println("6. Ejlistas 13")
+                println("1.  Ejlistas 04")
+                println("2.  Ejlistas 06")
+                println("3.  Ejlistas 08")
+                println("4.  Ejlistas 09")
+                println("5.  Ejlistas 10")
+                println("6.  Ejlistas 13\n")
+                println("7.  EjDiccionarios 03")
+                println("8.  EjDiccionarios 05")
+                println("9.  EjDiccionarios 06")
+                println("10. EjDiccionarios 07")
+                println("11. EjDiccionarios 08")
+                println("12. EjDiccionarios 10")
+                println("13. EjDiccionarios 11\n")
+                println("14. EjConjuntos 01")
+                println("15. EjConjuntos 02")
+                println("16. EjConjuntos 03")
+                println("17. EjConjuntos 04")
+                println("18. EjConjuntos 05")
+                println("19. EjConjuntos 06\n")
                 op = pedirOpcion(0, 19)
                 when (op) {
                     1 -> u3p1ej4()
@@ -199,10 +213,8 @@ fun mostrarMenu(tipo: Int) {
                     13 -> u3p2ej11()
                     14 -> u3p3ej1()
                     15 -> u3p3ej2()
-
-                    16 -> u2p3ej2()
-                    17 -> u2p3ej3()
-
+                    16 -> u3p3ej3()
+                    17 -> u3p3ej4()
                     18 -> u3p3ej5()
                     19 -> u3p3ej6()
                 }

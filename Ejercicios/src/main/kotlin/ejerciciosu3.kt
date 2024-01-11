@@ -545,14 +545,58 @@ fun mostrarNoRepetidosPrimaria(alumnosPrimaria:MutableSet<String>, alumnosSecund
  *
  * */
 fun u3p3ej3() {
+    val conjuntoOriginal = setOf(6,1,4)
 
+    fun conjuntoPotencia(conjuntoOriginal:Set<Int>): MutableList<Set<Int>> {
+        val listaPotencia = mutableListOf(setOf<Int>())
+        for (elemento in conjuntoOriginal) {
+            val nuevoSubconjunto= mutableListOf<Set<Int>>()
+            for (subconjunto in listaPotencia) {
+                nuevoSubconjunto.add(subconjunto union setOf(elemento))
+            }
+            listaPotencia.addAll(nuevoSubconjunto)
+        }
+        return listaPotencia
+    }
+
+    val listaPotencia = conjuntoPotencia(conjuntoOriginal)
+    println(listaPotencia)
 }
 
 /**
- *
+ * Crea los conjuntos de setFrutas1 y setFrutas2 a partir de dos listas y ejecuta funciones para
+ * las frutas comunes, las frutas que están en frutas1 y las que están en frutas2.
  * */
 fun u3p3ej4() {
+    val frutas1 = listOf("manzana", "pera", "naranja", "plátano", "uva")
+    val setFrutas1 = frutas1.toSet()
+    val frutas2 = listOf("manzana", "pera", "durazno", "sandía", "uva")
+    val setFrutas2 = frutas2.toSet()
 
+    /**
+     * Encuentra las frutas que están en ambas listas
+     * @param setFrutas1:Set<String> conjunto con las frutas1
+     * @param setFrutas2:Set<String> conjunto con las frutas2
+     */
+    fun frutasComunes(setFrutas1:Set<String>, setFrutas2:Set<String>) = println("Las frutas comunes son: ${(setFrutas1 intersect setFrutas2).joinToString(" ")}")
+
+    /**
+     * Encuentra las frutas que están en frutas1 pero no en frutas2
+     * @param setFrutas1:Set<String> conjunto con las frutas1
+     * @param setFrutas2:Set<String> conjunto con las frutas2
+     */
+    fun frutasSoloFrutas1(setFrutas1:Set<String>, setFrutas2:Set<String>) = println("Las frutas que solo están en fruta1 son: ${(setFrutas1 subtract  setFrutas2).joinToString(" ")}")
+
+    /**
+     * Encuentra las frutas que están en frutas2 pero no en frutas1
+     * @param setFrutas1:Set<String> conjunto con las frutas1
+     * @param setFrutas2:Set<String> conjunto con las frutas2
+     */
+    fun frutasSoloFrutas2(setFrutas1:Set<String>, setFrutas2:Set<String>) = println("Las frutas que solo están en fruta2 son: ${(setFrutas2 subtract  setFrutas1).joinToString(" ")}")
+
+    frutasComunes(setFrutas1, setFrutas2)
+    frutasSoloFrutas1(setFrutas1, setFrutas2)
+    frutasSoloFrutas2(setFrutas1, setFrutas2)
 }
 
 /**
