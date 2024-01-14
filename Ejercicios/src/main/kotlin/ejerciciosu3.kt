@@ -1,4 +1,5 @@
 import java.util.*
+import kotlin.math.sqrt
 
 // PARTE 1 -> Listas y tuplas: 4, 6, 8, 9, 10 y 13.
 
@@ -160,12 +161,16 @@ fun u3p1ej10() {
  * */
 fun u3p1ej13() {
     print("Introduce números separador por comas: ")
-    val num = readln()
-    val lista = num.split(",")
-    val media = media(lista)
-    val desviacion = desviacion(lista)
-    println("La media es de: ${String.format("%.2f", media)}")
-    println("La desviación típica es de: ${String.format("%.2f", desviacion)}")
+    try {
+        val num = readln()
+        val lista = num.split(",")
+        val media = media(lista)
+        val desviacion = desviacion(lista, media)
+        println("La media es de: ${String.format("%.2f", media)}")
+        println("La desviación típica es de: ${String.format("%.2f", desviacion)}")
+    } catch (e: Exception) {
+        println("**ERROR** formato introducido incorrecto, deben ser números enteros y estar separados por ´,´ .")
+    }
 
 }
 
@@ -182,19 +187,26 @@ fun media(lista: List<String>):Double {
     }
     val media = suma/division
     return media
+
 }
 
 /**
  * Calcula la desviacion de los números introducidos.
  * @param lista: List<String> lista con los números introducidos por el usuario
+ * @param media: Double media de los numeros introducidos.
  * @return desviacion:Double retorna la desviacion de los números introducidos en forma de Double
  * */
-fun desviacion(lista: List<String>) {
+fun desviacion(lista: List<String>, media: Double) : Double {
     val listaInt = mutableListOf<Int>()
     for (i in lista) {
         listaInt.add(i.toInt())
     }
-    val desviacion = "FALTA ESTO NO TENGO NI IDEA DE COMO SE HACE AYUDA"
+
+    var desviacion = 0.0
+    for (num in listaInt) {
+        desviacion += (num - media) * (num - media)
+    }
+    return sqrt(desviacion / listaInt.size)
 }
 
 
