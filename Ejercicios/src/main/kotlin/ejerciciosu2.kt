@@ -315,7 +315,7 @@ fun u2p2ej18() {
 /**
  * Devuelve true si el numero introducido es par y false si no lo es
  * @param num: Int número que ha introducido el usuario
- * @return Boolean si es par es true y si es impar es false
+ * @return Boolean si es par es true y si es impar es false.
  * */
 fun sonpares(num:Int):Boolean = num % 2 == 0
 
