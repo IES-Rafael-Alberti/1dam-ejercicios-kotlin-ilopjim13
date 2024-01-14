@@ -114,11 +114,16 @@ fun u2p1ej10() {
     }
 }
 
+/**
+ * Muestra los ingredientees de la pizza dependiendo del tipo de pizza elegido.
+ * @param pizza: Int número con el tipo de pizza que quiere.
+ * @return String mensaje con los ingredientes.
+ */
 fun pizzas(pizza: Int):String {
-    when (pizza) {
-        1 -> return "Estos son los ingredientes vegetarianos:\n- Pimiento\n- Tofu"
-        2 -> return "Estos son los ingredientes no vegetarianos: \n- Peperoni\n- Jamón\n- Salmón"
-        else -> return "**ERROR**"
+    return when (pizza) {
+        1 -> "Estos son los ingredientes vegetarianos:\n- Pimiento\n- Tofu"
+        2 -> "Estos son los ingredientes no vegetarianos: \n- Peperoni\n- Jamón\n- Salmón"
+        else -> "**ERROR**"
     }
 }
 
@@ -309,6 +314,8 @@ fun u2p2ej18() {
 
 /**
  * Devuelve true si el numero introducido es par y false si no lo es
+ * @param num: Int número que ha introducido el usuario
+ * @return Boolean si es par es true y si es impar es false
  * */
 fun sonpares(num:Int):Boolean = num % 2 == 0
 
