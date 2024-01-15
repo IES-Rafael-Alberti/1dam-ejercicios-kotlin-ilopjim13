@@ -478,17 +478,27 @@ fun u3p2ej11() {
  * por lo que la función retorna una estructura que contiene cada domicilio una sola vez.
  * */
 fun u3p3ej1() {
-    val lista = mutableListOf(
-        setOf("Nuria Costa", 5, 12780.78, "Calle Las Flores 355"),
-        setOf("Jorge Russo", 7, 699, "Mirasol 218"),
-        setOf("Nuria Costa", 7, 532.90, "Calle Las Flores 355"),
-        setOf("Julián Rodriguez", 12, 5715.99, "La Mancha 761"),
-        setOf("Jorge Russo", 15, 958, "Mirasol 218"))
-    val domicilios = mutableSetOf<Any>()
+    val lista = listOf(
+        listOf("Nuria Costa", 5, 12780.78, "Calle Las Flores 355"),
+        listOf("Jorge Russo", 7, 699, "Mirasol 218"),
+        listOf("Nuria Costa", 7, 532.90, "Calle Las Flores 355"),
+        listOf("Julián Rodriguez", 12, 5715.99, "La Mancha 761"),
+        listOf("Jorge Russo", 15, 958, "Mirasol 218"))
+    val domicilios = mutableSetOf<String>()
     for (i in lista) {
-        domicilios.add(i.elementAt(3))
+        domicilios.add(i[3].toString())
     }
     println(domicilios)
+
+    // Correccion del maestro:
+
+    // lista.forEach {domiciliosNoRep.add(it[3].toString())}
+    // return domiciliosNoRep.toList().sorted()
+
+    // println(domiciliosNoRep).joinToString(", ")
+
+
+    // return lista.map {it[3].toString}.toSet().toList().sorted()
 }
 
 /**
